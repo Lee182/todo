@@ -1,0 +1,24 @@
+[
+  {
+    "words": [
+      {
+        "type": "plain",
+        "text": "eating "
+      },
+      {
+        "type": "tag",
+        "text": "#cheese"
+      }
+    ],
+    "words_raw": "eating #cheese",
+    "tags": [
+      "cheese"
+    ],
+    "mentions": [],
+    "time_stamp": "2017-11-12T15:31:01.407Z",
+    "completed": false,
+    "recur": false,
+    "deadline": false,
+    "time_spent": []
+  }
+]

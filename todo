@@ -1,0 +1,43 @@
+what youtube video about separate electron windows
+include project .pug file and other build steps
+make header
+make data format
+add vuejs with for the data format and all states
+test the app.
+
+work on other screens suchas tag panel and admin.
+
+
+
+
+
+
+
+// make .json file modelling full task
+// link .json file to vuejs
+// link vuejs to pug bindings
+// make vuejs actions to perform on data
+// link vuejs actions to pug
+add event emitter for changes, which is debounced to cause writes every 5s of data on the frontend
+  deps learing ipc
+
+
+DONE copy parsing code outof pinterest clone
+DONE use parsing code to parse input,
+change words datamodel to be an array
+DONE and words_raw to be just text
+
+
+implement a pomodoro clock maybe
+remove browserify
+
+
+make an alternative to the input,
+requires text-select from to,
+requires cursor that blinks.
+requires listening to keyboard and dermining context
+
+
+
+find element, and then textNode to cut
+makecut inserting a span

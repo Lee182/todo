@@ -1,0 +1,10 @@
+.task.jtask_input.flex-row
+  .task-state.opacity0
+  .task-text
+    span.cursor(:class='{blink: jtask_input.focus && !jtask_input.typing, show: jtask_input.focus}')
+    span.plain.placeholder.ns(v-if='jtask_input.words.length === 0') Type a todo
+    div(v-for='item in jtask_input.words', :class=`item.type`)
+      span(v-if='item.type === "plain"') {{item.text}}
+      span.hash(v-if='item.type === "mention"') @
+      span.hash(v-if='item.type === "tag"') #
+      span(v-if='item.type !== "plain"') {{item.text.substr(1)}}

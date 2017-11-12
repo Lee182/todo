@@ -1,0 +1,44 @@
+html
+  head
+    meta(charset='utf-8')
+    title Todo
+    link(rel='stylesheet' href='font-awesome.min.css')
+    link(rel='stylesheet' href='styl.css')
+  body
+    #app
+      .title.flex-center.ns Todo
+      .head.flex-row
+        .head-search.flex-row
+          .head-icon
+            i.fa.fa-search
+          input(placeholder='filter tasks')
+        .head-icon
+          i.fa.fa-list-ol
+        .head-icon
+          i.fa.fa-clock-o
+      .neck.flex-row
+        .neck-item.all.active all
+        .flex-gap
+        .neck-item 
+          .task-state.todo
+          span todo
+        .neck-item
+          .task-state.done
+          span done
+        .flex-gap
+      .tasks
+        include modules/input.pug
+        .task.flex-row
+          .task-state.opacity0
+          .task-text
+            input.task_input(placeholder='Type a todo' v-model='task_input' v-on:keypress.enter='add_task')
+        .task.flex-row(v-for='task in tasks')
+          .task-state.todo
+          .task-text
+            div(v-for='item in task.words', :class=`item.type`)
+              span(v-if='item.type === "plain"') {{item.text}}
+              span.hash(v-if='item.type === "mention"') @
+              span.hash(v-if='item.type === "tag"') #
+              span(v-if='item.type !== "plain"') {{item.text.substr(1)}}
+    script.
+      require('../app/index.js')

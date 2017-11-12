@@ -1,0 +1,32 @@
+{
+  "name": "hash",
+  "version": "1.0.0",
+  "description": "See the various hash values of entered text",
+  "repository": "https://github.com/Lee182/todo.git",
+  "main": "app.js",
+  "scripts": {
+    "start": "electron main.js",
+    "copy-libs": "cp ./app/lib-external/* ./dist/",
+    "pug": "pug -P ./app/index.pug -o ./dist/index.html",
+    "watch-pug": "pug -w ./app/index.pug -o ./dist/",
+    "css": "stylus ./app/*.styl -o ./dist/",
+    "watch-css": "stylus -w ./app/*.styl -o ./dist/",
+    "browserify": "browserify ./app/index.js -o ./dist/bundle.js",
+    "watch-browserify": "watchify ./app/index.js -o ./dist/bundle.js",
+    "build": "npm-run-all --parallel pug css browserify",
+    "dev": "npm-run-all --parallel copy-libs watch-pug watch-css watch-browserify start"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "browserify": "^14.5.0",
+    "electron": "^1.7.9",
+    "electron-packager": "^9.1.0",
+    "npm-run-all": "^4.0.0",
+    "pug": "^2.0.0-beta6",
+    "stylus": "^0.54.5",
+    "watchify": "^3.7.0"
+  },
+  "dependencies": {
+    "lodash": "^4.17.4"
+  }
+}
